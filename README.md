@@ -34,8 +34,6 @@ Para a execução dos testes automatizados navegue com o terminal até a pasta r
 yarn test
 ````
 
-<br>
-
 ## ⚠ Observações:
 • Não coloquei a API KEY em um .env pois não faria sentido neste caso.
 
