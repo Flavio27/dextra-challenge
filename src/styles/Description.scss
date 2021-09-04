@@ -1,0 +1,118 @@
+@import "./_media-query.scss";
+
+.main-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #202020;
+  @media screen and (max-width: 281px){
+    overflow-x: hidden;
+  }
+
+}
+
+.grid-description {
+  width: 100vw;
+  height: 100vh;
+  background: #202020;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.2fr;
+
+  @include mobile {
+    grid-template-columns: 0fr 1fr 0fr;
+  }
+}
+
+.body-description {
+  display: flex;
+  margin-top: 100px;
+  color: #FFFFFF;
+  background: #202020;
+
+  @include mobile {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.comic-img {
+  max-width: 300px;
+  max-height: 460px;
+}
+
+.comic-title{
+font-size: 2.0rem;
+font-weight: 700;
+
+@include mobile{
+  margin-top: 20px;
+}
+}
+.about {
+  margin-left: 5%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    width: 280px;
+  }
+}
+
+.info {
+  margin-top: 50px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.description-box{
+  
+  margin: 25px 0px;
+  @include mobile{
+    margin: 25px 0px;
+  }
+  .title{
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  span{
+    font-size: 1.4rem;
+  }
+
+}
+
+.text{
+  margin-top: 80px;
+
+  @include mobile{
+    margin-top: 40px;
+  }
+}
+
+.back-link{
+  margin-top: 110px;
+  margin-left: -80%;
+
+
+  @include mobile{
+    margin-top: 90px;
+    margin-left: -50%;
+  }
+
+  a{
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    text-decoration: none;
+
+  }
+
+  &:hover{
+    filter: brightness(0.7);
+  }
+ 
+}

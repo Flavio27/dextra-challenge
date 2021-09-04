@@ -1,0 +1,28 @@
+@import "../../styles/media-query";
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  position: fixed;
+  top: 60%;
+  left: 45%;
+  border: 10px solid #E1E1E1;
+  border-top: 10px solid #ec1d24;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 0.5s linear infinite;
+
+  @include mobile{
+    top: 55%;
+    left: 35%;
+  }
+
+}

@@ -1,0 +1,112 @@
+@import "./_media-query.scss";
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+
+  @include mobile {
+    margin-top: 70px;
+  }
+}
+
+.previous-arrow {
+  color: #ec1d24;
+  position: fixed;
+  left: 2em;
+  top: 60%;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.7);
+  }
+
+  @include tablet {
+    left: 1.5em;
+  }
+
+  @include mobile {
+    left: 0em;
+  }
+}
+
+.next-arrow {
+  color: #ec1d24;
+  position: fixed;
+  right: 2em;
+  top: 60%;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.7);
+  }
+
+  @include tablet {
+    right: 1.5em;
+  }
+
+  @include mobile {
+    right: 0em;
+  }
+}
+
+.grid-cards {
+  margin: -1em 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2em 2em;
+  grid-template-areas:
+    ". . . . ."
+    ". . . . .";
+  width: 60em;
+  height: 32em;
+}
+
+@include tablet {
+  .grid-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 2em 1em;
+    grid-template-areas:
+      ". . ."
+      ". . ."
+      ". . ."
+      ". . .";
+    width: 30em;
+    height: 60em;
+  }
+}
+
+@include mobile {
+  .grid-cards {
+    margin: 1em 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em 1em;
+    grid-template-areas:
+      ". ."
+      ". ."
+      ". ."
+      ". ."
+      ". .";
+    width: 20em;
+    height: 70em;
+  }
+}
+
+.comic-logo{
+  position: absolute;
+  top: 90px;
+  width: 150px;
+  z-index: -1;
+}
