@@ -10,6 +10,7 @@ function Routes() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/description" component={Description} />
+          <Route component={Home} />
         </Switch>
       </ComicContextProvider>
     </BrowserRouter>
