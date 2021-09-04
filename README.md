@@ -2,6 +2,10 @@
 Code challenge proposto pela a empresa: Dextra
 <br/>
 Solução desenvolvida por: Flavio Rocha
+<br/>
+• Solução online disponível em: https://dextra-challenge.vercel.app/
+<br/>
+• Código da aplicação disponível em: https://github.com/Flavio27/dextra-challenge
 
 ##  ⚙  Configurações
 - Framework / biblioteca: React.js
