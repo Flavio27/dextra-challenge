@@ -1,26 +1,15 @@
 import "@testing-library/jest-dom";
 import "@testing-library/jest-dom/extend-expect";
 import React from "react";
-import {
-  act,
-  cleanup,
-  render,
-  screen,
-  fireEvent,
-  waitFor
-} from "@testing-library/react";
+import { act, cleanup, render, screen } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { ComicContextProvider } from "../contexts/ComicContext";
 import { Router } from "react-router-dom";
-import { Route, Switch } from "react-router-dom";
 import { Home } from "../pages/Home";
 import userEvent from "@testing-library/user-event";
 import axios, { AxiosResponse } from "axios";
 
-
 jest.mock("axios");
-
-
 
 const HomeScreen = () => {
   const history = createMemoryHistory(["/", "/description"]);
@@ -94,5 +83,4 @@ describe("Home", () => {
     const searchBox = screen.getByRole("textbox");
     expect(searchBox).toBeInTheDocument();
   });
-
 });

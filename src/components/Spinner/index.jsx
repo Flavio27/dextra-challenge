@@ -6,7 +6,7 @@ function Spinner() {
   return (
     <div className="container-spinner">
       <div className="spinner">
-        <img src={deadpool} alt="" srcset="" />
+        <img src={deadpool} alt="deadpool"/>
       </div>
       loading...
     </div>
