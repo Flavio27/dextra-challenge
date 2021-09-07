@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Card } from "../components/Card";
-import { Header } from "../components/Header";
 import { BASE_URL_COMICS } from "../services/api";
+import { SearchBar } from "../components/SearchBar";
 import { Spinner } from "../components/Spinner";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import { Header } from "../components/Header";
+import { Card } from "../components/Card";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import SearchBar from "../components/SearchBar";
-import comicLogo from "../assets/imgs/comic-logo.png";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import avengers from "../assets/imgs/avengers.png";
 import axios from "axios";
 import Aos from "aos";
 import "../styles/App.scss";
@@ -44,7 +44,6 @@ function Home() {
     <div className="main-container" title="comics">
       <Header />
       <SearchBar />
-      <img src={comicLogo} alt="marvel-comics" className="comic-logo" t />
       <div className="cards">
         <div className="grid-cards">
           {!isLoading &&
@@ -65,6 +64,12 @@ function Home() {
         title="next-arrow"
         style={{ fontSize: 50 }}
         onClick={() => setOffset(offset + MAX_COMIC_GRID)}
+      />
+      <img
+        src={avengers}
+        alt="avengers"
+        className="avengers-img"
+        data-aos="fade-right"
       />
     </div>
   );

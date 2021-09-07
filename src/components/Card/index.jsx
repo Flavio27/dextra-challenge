@@ -5,10 +5,15 @@ import "./styles.scss";
 function Card({ props }) {
   const { setComicSelected } = useComic();
   const history = useHistory();
-  const { title, thumbnail, creators: { items }} = props;
+
+  const {
+    title,
+    thumbnail,
+    creators: { items },
+  } = props;
 
   const authors = items || [];
-  const cardImg = `${thumbnail?.path}.${thumbnail?.extension}` || ""
+  const cardImg = `${thumbnail?.path}.${thumbnail?.extension}` || "";
 
   const getAuthors = () => {
     if (authors.length >= 2) return `${authors[0].name}, ${authors[1].name}`;
@@ -17,17 +22,13 @@ function Card({ props }) {
   };
 
   const selectComic = () => {
-    setComicSelected(props)
-    history.push("/description")
-  }
+    setComicSelected(props);
+    history.push("/description");
+  };
 
   return (
     <div className="card-container" onClick={selectComic}>
-      <img
-        className="thumbnail"
-        src={cardImg}
-        alt={props?.title}
-      />
+      <img className="thumbnail" src={cardImg} alt={props?.title} />
       <div className="description">
         <div className="title">{title || "Title"}</div>
         <div className="author">{getAuthors()}</div>

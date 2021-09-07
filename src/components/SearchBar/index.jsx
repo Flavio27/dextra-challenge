@@ -7,10 +7,10 @@ import Aos from "aos";
 import "./styles.scss";
 import "aos/dist/aos.css";
 
-function SearchBar() {
+function SearchBar({ isDark }) {
   const [herosFound, setHerosFound] = useState([]);
   const [heroName, setHeroName] = useState([]);
-  const [heroSelected, setHeroSelected] = useState("test");
+  const [heroSelected, setHeroSelected] = useState("");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -35,17 +35,19 @@ function SearchBar() {
 
   return (
     <div className="searchBar-container">
-      <SearchIcon className="search-icon" style={{ fontSize: "35px" }} />
-      <input
-        className="search-input"
-        type="text"
-        placeholder="SEARCH A HERO NAME ..."
-        onChange={(e) => setHeroName(e.target.value)}
-      />
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <SearchIcon className="search-icon" style={{ fontSize: "35px" }} />
+        <input
+          className={`search-input ${isDark && "dark"}`}
+          type="text"
+          placeholder="SEARCH A HERO NAME ..."
+          onChange={(e) => setHeroName(e.target.value)}
+        />
+      </div>
       {herosFound.length > 0 && heroName.length > 0 && (
-        <div className="foundHeros">
+        <div className={`foundHeros ${isDark && "dark"}`}>
           {herosFound.map((hero) => (
-            <div key={hero?.name} onClick={() => onSelectHeroFound(hero)} oncli>
+            <div key={hero?.name} onClick={() => onSelectHeroFound(hero)}>
               {hero.name}
             </div>
           ))}
@@ -56,4 +58,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export {SearchBar};

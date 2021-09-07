@@ -1,8 +1,16 @@
 import React from "react";
+import deadpool from "../../assets/imgs/deadpool-logo.png";
 import "./styles.scss";
 
 function Spinner() {
-  return <div className="spinner" />;
+  return (
+    <div className="container-spinner">
+      <div className="spinner">
+        <img src={deadpool} alt="" srcset="" />
+      </div>
+      loading...
+    </div>
+  );
 }
 
 export { Spinner };
